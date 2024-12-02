@@ -61,6 +61,6 @@ movefile(fullfile(datapath, 'vdm*.*'), peresDir);
 %% Run Artifact Detection Batch
   
 clear matlabbatch;
-[matlabbatch, art_pth] = func_ArtDetection_batch(motionCorrectedDir, save_path, subj_name, TR);
+[matlabbatch, art_pth] = func_ArtDetection_batch(motionCorrectedDir, save_path, subj_name, TR, ses);
 spm_jobman('serial', matlabbatch);
 art_batch(fullfile(art_pth, 'SPM.mat'));
