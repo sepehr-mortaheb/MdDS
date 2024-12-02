@@ -6,43 +6,26 @@ clear
 % --- Set the following directories --- 
 
 % Directory of the BIDS formated data:
-bids_dir = '';
+bids_dir = '/Users/sepehrmortaheb/Desktop/MdDS_test/data';
 % Save directory of the fMRI processing:
-save_dir = '';
+save_dir = '/Users/sepehrmortaheb/Desktop/MdDS_test/preprocessed';
 
 %##########################################################################
 % --- Set the Acquisition Parameters --- 
 
-% ------ General Parmaeters ------
-% The name of the functional task
+scanner = 'vida'; % pris, vida
 task_name = 'rest';
-% Repetition Time (RT) of the functional acquisition (seconds)
-func_TR = 2; 
 
-% ------ SDC-Specific Parameters ------
-% Echo time of (TE) of the functional data (ms)
-echo_time = [4.92 7.38];
-% Total EPI read-out time (ms)
-total_EPI_rot = 46.48;
-
-% ------ STC-Specific Parameters ------ 
-% Number of Slices
-stc_num = 42;
-% Slice Order (1=ascending, 2=descending, 3=interleaved(middle-top),
-% 4=interleaved(buttom-up), 5=interleaved(top-down), 6:slice timings
-% available in the JSON file)
-stc_ord = 6;
-% Reference Slice
-stc_ref = 1;
+[func_TR, echo_time, total_EPI_rot, stc_num, stc_ord, stc_ref] = func_ReadParams(scanner);
 
 %##########################################################################
 % --- Set the Participants Information --- 
 
 % Subjects list [Ex: {'sub-XXX'; 'sub-YYY'}]
-subj_list = {'sub-Test'};
+subj_list = {'sub-patientMT09'};
 
 % Sessions list [Ex: {'ses-ZZZ'; 'ses-TTT'}]
-ses_list = {'ses-1'};
+ses_list = {'ses-post'};
 
 %##########################################################################
 % --- Creating Handy Variables and AddPath Required Directories ---
@@ -67,6 +50,7 @@ AcqParams.trot = total_EPI_rot;
 AcqParams.nslc = stc_num;
 AcqParams.ordslc = stc_ord;
 AcqParams.refslc = stc_ref;
+AcqParams.scanner = scanner;
 
 % Subject Information Struct
 Subjects(length(subj_list)) = struct();

@@ -3,6 +3,7 @@ function func_PipelineSS(Dirs, subj, AcqParams)
 out_dir = Dirs.out;
 task_name = AcqParams.name;
 ses_list = subj.sessions;
+scanner = AcqParams.scanner;
 
 %% Initialization
 if ~isfolder(out_dir)
@@ -13,9 +14,9 @@ end
 for i = 1:numel(ses_list)
     ses = ses_list{i};
     % reading the data
-    inpfiles = func_ReadFiles(subj, ses, task_name);
+    inpfiles = func_ReadFiles(subj, ses, task_name, scanner);
     
     % perform preprocessing
-    func_Preproc(inpfiles, Dirs, subj, AcqParams)
+    func_Preproc(inpfiles, Dirs, subj, AcqParams, ses)
     close all
 end
