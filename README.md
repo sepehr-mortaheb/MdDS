@@ -7,9 +7,7 @@
 ## Introduction 
 Mal de Débarquement Syndrome (MdDS) is a debilitating neuro-otological disorder characterized by a persistent sensation of self-motion. It can be triggered by exposure to motion, such as being on a boat, or occur spontaneously. Due to the unknown pathophysiological mechanisms underlying this condition, current treatment options for symptom management are limited. At the ENT department of Sint-Augustinus Hospital, we provide a standard treatment protocol that is now recognized as the most established approach for managing MdDS. This treatment consists of optokinetic stimulation (OKS) and a fixed head roll at 0.167 Hz, administered over three consecutive days in the OKS booth. In this project, we aim to advance our understanding of MdDS through clinical trials. We have conducted MRI scans of patients before and after treatment to assess its effects on the brain and compare these findings to scans from healthy controls to elucidate the neural characteristics of MdDS. In particular, we have acquired resting-state fMRI to investigate the effect of treatment on the brain's functional connectome.
 
-In this repository, you will find the codes we have used to preprocess the functional 
-
-
+In this repository, you will find the codes we have used to preprocess and analyze the functional data.
 
 ## fMRI Preprocessing Pipeline
 
