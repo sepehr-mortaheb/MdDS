@@ -27,8 +27,6 @@ This pipeline consists of the following steps:
   - It uses the forward transformation parameters of the segmentation step, to normalize the functional data into the MNI space. 
 - Smoothing 
 
-I tried to make this pipeline as automatic as possible. You just need to set some directories and acquisition parameters, run the pipeline, and sit and drink your coffee!
-
 ### Practical Info: 
 
 - In this pipeline, the **CAT12** has been used for the segmentation as it gives more precise results than the **SPM** segmentation. So, make sure that you have downloaded the [CAT12](https://neuro-jena.github.io/cat/) package and have put it in the **SPM toolbox** folder.
